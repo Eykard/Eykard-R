@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eykard De Los Santos | Portafolio Cyberpunk UI/UX & Frontend</title>
+  
+  <!-- Metadatos SEO -->
+  <meta name="description" content="Portafolio profesional de Eykard De Los Santos - Frontend Developer & UI/UX Designer. Desarrollo web minimalista, responsive, optimizado para SEO." />
+  <meta name="keywords" content="Frontend, UI/UX, Bootstrap, JavaScript, Cyberpunk, Portafolio, HTML5, CSS3, React, .NET MAUI" />
+  <meta name="author" content="Eykard De Los Santos" />
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Google Fonts: Orbitron & Rajdhani -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <!-- Hoja de Estilos Externa -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fondo animado Matrix -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand-font fw-bold text-gradient" href="#" style="color: var(--neon-cyan);">
+        ⚡ EYKARD.DEV
+      </a>
+      <button class="navbar-toggler border-0 text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <i class="fa-solid fa-bars" style="color: var(--neon-cyan); font-size: 1.5rem;"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center gap-3 my-2 my-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#hero"><i class="fa-solid fa-user me-1"></i> Bio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#stack"><i class="fa-solid fa-layer-group me-1"></i> Stack</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyectos"><i class="fa-solid fa-code me-1"></i> Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experiencia"><i class="fa-solid fa-briefcase me-1"></i> Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#videos"><i class="fa-solid fa-video me-1"></i> Videos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto"><i class="fa-solid fa-envelope me-1"></i> Contacto</a></li>
+          <li class="nav-item">
+            <button id="themeToggleBtn" class="btn btn-cyber-outline px-3 py-1 rounded-pill">
+              <i class="fa-solid fa-sun me-1 text-warning" id="themeIcon"></i> <span id="themeText">Modo Claro</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SECCIÓN HERO -->
+  <section id="hero" class="py-5 my-lg-4">
+    <div class="container">
+      <div class="cyber-card p-4 p-lg-5">
+        <div class="row align-items-center g-4">
+          <!-- Columna Información (Izquierda) -->
+          <div class="col-lg-7 text-center text-lg-start">
+            <span class="badge badge-cyber px-3 py-2 rounded-pill mb-3">
+              🟢 DISPONIBLE PARA PROYECTOS & INNOVACIÓN
+            </span>
+            <h1 class="display-5 fw-bold mb-2">
+              Hola, soy <span style="color: var(--neon-cyan);">Eykard De Los Santos</span> 💻
+            </h1>
+            <h2 class="h4 mb-3" style="color: var(--neon-green);">
+              Frontend Developer & UI/UX Designer ⚡
+            </h2>
+            <p class="lead" style="color: var(--text-muted);">
+              Especialista en interfaces de usuario de alta fidelidad, minimalistas y totalmente responsivas. Enfoque riguroso en buenas prácticas arquitectónicas, optimización de rendimiento y posicionamiento <strong>SEO</strong> con código limpio, escalable y accesible.
+            </p>
+            <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start mt-4">
+              <a href="#proyectos" class="btn btn-dodgerblue px-4 py-2 rounded-pill">
+                <i class="fa-solid fa-rocket me-2"></i> Ver Portafolio
+              </a>
+              <a href="#contacto" class="btn btn-cyber-outline px-4 py-2 rounded-pill">
+                <i class="fa-solid fa-paper-plane me-2"></i> Contactar
+              </a>
+            </div>
+          </div>
+          <!-- Columna Foto de Perfil (Derecha) -->
+          <div class="col-lg-5 text-center">
+            <img 
+              src="https://lms2.oymas.edu.do/assets/avatar/assets/files/q8GRvJSECPFCZtT24-SISN-8-035-avatar.jpg" 
+              alt="Foto de Perfil de Eykard De Los Santos" 
+              class="hero-img img-fluid"
+              loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80';"
+            />
+            <div class="mt-3">
+              <span class="badge bg-dark border border-info text-info px-3 py-1">
+                <i class="fa-solid fa-terminal me-1"></i> Matrícula: 24-SISN-8-035
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN STACK TECNOLÓGICO -->
+  <section id="stack" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="color: var(--neon-cyan);"><i class="fa-solid fa-microchip me-2"></i>Stack Tecnológico ⚡</h2>
+        <p style="color: var(--text-muted);">Herramientas y lenguajes base implementados bajo estrictos estándares industriales</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- HTML5 -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="cyber-card text-center p-3 h-100">
+            <i class="fa-brands fa-html5 fa-3x mb-2" style="color: #e34f26;"></i>
+            <h5 class="fw-bold mb-0">HTML5</h5>
+            <small style="color: var(--text-muted);">Semántica & SEO</small>
+          </div>
+        </div>
+        <!-- CSS3 -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="cyber-card text-center p-3 h-100">
+            <i class="fa-brands fa-css3-alt fa-3x mb-2" style="color: #1572b6;"></i>
+            <h5 class="fw-bold mb-0">CSS3</h5>
+            <small style="color: var(--text-muted);">Animaciones UI</small>
+          </div>
+        </div>
+        <!-- JavaScript -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="cyber-card text-center p-3 h-100">
+            <i class="fa-brands fa-js fa-3x mb-2" style="color: #f7df1e;"></i>
+            <h5 class="fw-bold mb-0">JavaScript</h5>
+            <small style="color: var(--text-muted);">ES6+ Dinámico</small>
+          </div>
+        </div>
+        <!-- React -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="cyber-card text-center p-3 h-100">
+            <i class="fa-brands fa-react fa-3x mb-2" style="color: #61dafb;"></i>
+            <h5 class="fw-bold mb-0">React</h5>
+            <small style="color: var(--text-muted);">SPA Components</small>
+          </div>
+        </div>
+        <!-- Bootstrap -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="cyber-card text-center p-3 h-100">
+            <i class="fa-brands fa-bootstrap fa-3x mb-2" style="color: #7952b3;"></i>
+            <h5 class="fw-bold mb-0">Bootstrap</h5>
+            <small style="color: var(--text-muted);">Diseño Responsive</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN PROYECTOS -->
+  <section id="proyectos" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold" style="color: var(--neon-cyan);"><i class="fa-solid fa-cubes me-2"></i>Galería de Proyectos 🌐</h2>
+        <p style="color: var(--text-muted);">Catálogo clasificado en Desarrollo Web, Aplicaciones y Diseño UI/UX</p>
+        
+        <!-- Botones de Filtro -->
+        <div class="d-flex flex-wrap justify-content-center gap-2 mt-4" id="project-filters">
+          <button class="btn btn-cyber-outline active px-3 py-2 rounded-pill filter-btn" data-filter="all">
+            <i class="fa-solid fa-border-all me-1"></i> Todos (9)
+          </button>
+          <button class="btn btn-cyber-outline px-3 py-2 rounded-pill filter-btn" data-filter="web">
+            <i class="fa-solid fa-globe me-1"></i> Web (3)
+          </button>
+          <button class="btn btn-cyber-outline px-3 py-2 rounded-pill filter-btn" data-filter="app">
+            <i class="fa-solid fa-mobile-screen-button me-1"></i> Apps (3)
+          </button>
+          <button class="btn btn-cyber-outline px-3 py-2 rounded-pill filter-btn" data-filter="diseno">
+            <i class="fa-solid fa-palette me-1"></i> Diseño (3)
+          </button>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-2" id="projects-grid">
+        <!-- Web 1 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="web">
+          <div class="cyber-card h-100 overflow-hidden d-flex flex-column">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfL-Leyd1Rp13h1HyEApEY-vFUt54iFN6Ycw&s" class="card-img-top" style="height: 210px; object-fit: cover;" alt="Proyecto Web 1" loading="lazy">
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <span class="badge badge-cyber mb-2 align-self-start">Web 1</span>
+              <h5 class="fw-bold">Plataforma Web Corporativa</h5>
+              <p class="small flex-grow-1" style="color: var(--text-muted);">Portal web optimizado para velocidad, accesibilidad y máxima conversión comercial con Bootstrap 5.</p>
+              <button class="btn btn-cyber-outline btn-sm w-100"><i class="fa-solid fa-eye me-1"></i> Explorar Demo</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web 2 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="web">
+          <div class="cyber-card h-100 overflow-hidden d-flex flex-column">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPLsf6mCKkQ4Ns2IOGdnTL6oDQR4KNIAdUbw&s" class="card-img-top" style="height: 210px; object-fit: cover;" alt="Proyecto Web 2" loading="lazy">
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <span class="badge badge-cyber mb-2 align-self-start">Web 2</span>
+              <h5 class="fw-bold">Dashboard Analítico SaaS</h5>
+              <p class="small flex-grow-1" style="color: var(--text-muted);">Consola interactiva con métricas en tiempo real, widgets personalizables y gráficas responsivas.</p>
+              <button class="btn btn-cyber-outline btn-sm w-100"><i class="fa-solid fa-eye me-1"></i> Explorar Demo</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web 3 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="web">
+          <div class="cyber-card h-100 overflow-hidden d-flex flex-column">
+            <img src="https://i.ytimg.com/vi/ukiGFmZ32YA/maxresdefault.jpg" class="card-img-top" style="height: 210px; object-fit: cover;" alt="Proyecto Web 3" loading="lazy">
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <span class="badge badge-cyber mb-2 align-self-start">Web 3</span>
+              <h5 class="fw-bold">E-Commerce Cyberpunk</h5>
+              <p class="small flex-grow-1" style="color: var(--text-muted);">Tienda en línea orientada a productos de tecnología con carrito reactivo y pasarela digital.</p>
+              <button class="btn btn-cyber-outline btn-sm w-100"><i class="fa-solid fa-eye me-1"></i> Explorar Demo</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- App 1 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="app">
+          <div class="cyber-card h-100 overflow-hidden d-flex flex-column">
+            <img src="https://atomicwallet.io/images/wallets/cryptocurrency_bitcoin_wallet.webp" class="card-img-top" style="height: 210px; object-fit: cover;" alt="Proyecto App 1" loading="lazy">
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <span class="badge badge-cyber mb-2 align-self-start">App 1</span>
+              <h5 class="fw-bold">Billetera Cripto & Finanzas</h5>
+              <p class="small flex-grow-1" style="color: var(--text-muted);">Aplicación de gestión de criptoactivos con balance en tiempo real, seguridad avanzada y modo oscuro.</p>
+              <button class="btn btn-cyber-outline btn-sm w-100"><i class="fa-solid fa-eye me-1"></i> Explorar Demo</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- App 2 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="app">
+          <div class="cyber-card h-100 overflow-hidden d-flex flex-column">
+            <img src="https://images01.nicepagecdn.com/page/12/93/website-template-preview-1293170.jpg" class="card-img-top" style="height: 210px; object-fit: cover;" alt="Proyecto App 2" loading="lazy">
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <span class="badge badge-cyber mb-2 align-self-start">App 2</span>
+              <h5 class="fw-bold">App Móvil de Gestión & Tareas</h5>
+              <p class="small flex-grow-1" style="color: var(--text-muted);">Sistema móvil multiplataforma para control de proyectos, sincronización en nube y recordatorios.</p>
+              <button class="btn btn-cyber-outline btn-sm w-100"><i class="fa-solid fa-eye me-1"></i> Explorar Demo</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- App 3 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="app">
+          <div class="cyber-card h-100 overflow-hidden d-flex flex-column">
+            <img src="https://www.mitec.cz/wp/wp-content/uploads/2025/06/TMX_001.png" class="card-img-top" style="height: 210px; object-fit: cover;" alt="Proyecto App 3" loading="lazy">
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <span class="badge badge-cyber mb-2 align-self-start">App 3</span>
+              <h5 class="fw-bold">Monitor de Redes & Diagnóstico</h5>
+              <p class="small flex-grow-1" style="color: var(--text-muted);">Herramienta de diagnóstico para inspección de paquetes, latencia y telemetría de sistemas.</p>
+              <button class="btn btn-cyber-outline btn-sm w-100"><i class="fa-solid fa-eye me-1"></i> Explorar Demo</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diseño 1 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="diseno">
+          <div class="cyber-card h-100 overflow-hidden d-flex flex-column">
+            <img src="https://as2.ftcdn.net/jpg/02/75/03/05/1000_F_275030527_PNJeGbT0vASVdu5TXWLvqiIbGAwYUNFj.jpg" class="card-img-top" style="height: 210px; object-fit: cover;" alt="Proyecto Diseño 1" loading="lazy">
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <span class="badge badge-cyber mb-2 align-self-start">Diseño 1</span>
+              <h5 class="fw-bold">Design System & UI Kit Neón</h5>
+              <p class="small flex-grow-1" style="color: var(--text-muted);">Conjunto integral de componentes, tipografías y paletas de color con estética cyberpunk futurista.</p>
+              <button class="btn btn-cyber-outline btn-sm w-100"><i class="fa-solid fa-eye me-1"></i> Explorar Demo</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diseño 2 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="diseno">
+          <div class="cyber-card h-100 overflow-hidden d-flex flex-column">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTooJuOvyQnfadbRxnHhJ-UMB-7cxXaNXPmng&s" class="card-img-top" style="height: 210px; object-fit: cover;" alt="Proyecto Diseño 2" loading="lazy">
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <span class="badge badge-cyber mb-2 align-self-start">Diseño 2</span>
+              <h5 class="fw-bold">Prototipado Mobile UX</h5>
+              <p class="small flex-grow-1" style="color: var(--text-muted);">Arquitectura de información y wireframes de alta fidelidad enfocados en usabilidad intuitiva.</p>
+              <button class="btn btn-cyber-outline btn-sm w-100"><i class="fa-solid fa-eye me-1"></i> Explorar Demo</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diseño 3 -->
+        <div class="col-md-6 col-lg-4 project-item" data-category="diseno">
+          <div class="cyber-card h-100 overflow-hidden d-flex flex-column">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCK2HLpYJaBkuJKUqtmlSzNc9V7Ziw8U3wew&s" class="card-img-top" style="height: 210px; object-fit: cover;" alt="Proyecto Diseño 3" loading="lazy">
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <span class="badge badge-cyber mb-2 align-self-start">Diseño 3</span>
+              <h5 class="fw-bold">Branding & Motion Identity</h5>
+              <p class="small flex-grow-1" style="color: var(--text-muted);">Identidad visual completa, iconografía personalizada y activos digitales de alto impacto.</p>
+              <button class="btn btn-cyber-outline btn-sm w-100"><i class="fa-solid fa-eye me-1"></i> Explorar Demo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN EXPERIENCIA LABORAL -->
+  <section id="experiencia" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="color: var(--neon-cyan);"><i class="fa-solid fa-business-time me-2"></i>Trayectoria Laboral 🏢</h2>
+        <p style="color: var(--text-muted);">Experiencia en supervisión, soporte técnico y liderazgo estratégico</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Exp 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cyber-card p-4 h-100 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge bg-primary text-white px-3 py-1 rounded-pill">2017</span>
+              <i class="fa-solid fa-boxes-stacked fa-2x" style="color: var(--neon-yellow);"></i>
+            </div>
+            <h5 class="fw-bold text-uppercase" style="color: var(--neon-cyan);">Supervisor</h5>
+            <h6 class="fw-bold mb-3" style="color: var(--text-main);">Almacenes Unidos</h6>
+            <p class="small" style="color: var(--text-muted);">
+              Encargado de que todo en el almacén esté acorde con el inventario y garantizar que cada colaborador cumpla eficientemente con sus asignaciones.
+            </p>
+          </div>
+        </div>
+
+        <!-- Exp 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cyber-card p-4 h-100 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge bg-info text-dark px-3 py-1 rounded-pill">2020</span>
+              <i class="fa-solid fa-headset fa-2x" style="color: var(--neon-green);"></i>
+            </div>
+            <h5 class="fw-bold text-uppercase" style="color: var(--neon-cyan);">Soporte de Sistema</h5>
+            <h6 class="fw-bold mb-3" style="color: var(--text-main);">Innovación</h6>
+            <p class="small" style="color: var(--text-muted);">
+              Encargado de brindar soporte técnico a hardware, software e infraestructura de red cada vez que sea requerido para mantener continuidad operativa.
+            </p>
+          </div>
+        </div>
+
+        <!-- Exp 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cyber-card p-4 h-100 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge bg-warning text-dark px-3 py-1 rounded-pill">2026</span>
+              <i class="fa-solid fa-chart-line fa-2x" style="color: var(--neon-pink);"></i>
+            </div>
+            <h5 class="fw-bold text-uppercase" style="color: var(--neon-cyan);">Gerente</h5>
+            <h6 class="fw-bold mb-3" style="color: var(--text-main);">GRUPO RAMOS</h6>
+            <p class="small" style="color: var(--text-muted);">
+              Liderazgo de operaciones integrales, optimización de flujos tecnológicos y gestión de personal orientada a excelencia en servicio y rendimiento.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN VIDEOS DESTACADOS -->
+  <section id="videos" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="color: var(--neon-cyan);"><i class="fa-solid fa-film me-2"></i>Videos Destacados 🎥</h2>
+        <p style="color: var(--text-muted);">Demostraciones prácticas, desarrollo en .NET MAUI y aplicaciones móviles</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Video 1 Visible -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cyber-card h-100 video-card overflow-hidden d-flex flex-column">
+            <div class="ratio ratio-16x9">
+              <iframe 
+                src="https://www.youtube.com/embed/0-WboyiwWB4" 
+                title="Tipos de Datos y variables en .NET MAUI ⚙️" 
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="p-3 text-center flex-grow-1 d-flex flex-column justify-content-center">
+              <h6 class="fw-bold mb-1" style="color: var(--neon-cyan);">🎥 Tipos de Datos y variables en .NET MAUI ⚙️</h6>
+              <p class="small mb-0" style="color: var(--text-muted);">📱 Tutorial: Programación de Dispositivos Móviles</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 2 Visible -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cyber-card h-100 video-card overflow-hidden d-flex flex-column">
+            <div class="ratio ratio-16x9">
+              <iframe 
+                src="https://www.youtube-nocookie.com/embed?listType=user_uploads&list=EykardDLS" 
+                title="Ejercicio de variables local y global en 📱 .NET MAUI 🔥" 
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="p-3 text-center flex-grow-1 d-flex flex-column justify-content-center">
+              <h6 class="fw-bold mb-1" style="color: var(--neon-green);">🎥 Variables Local y Global en 📱 .NET MAUI 🔥</h6>
+              <p class="small mb-0" style="color: var(--text-muted);">⚡ Demostración práctica de Scope e Incremento</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 3 Visible -->
+        <div class="col-md-6 col-lg-4">
+          <div class="cyber-card h-100 video-card overflow-hidden d-flex flex-column">
+            <div class="ratio ratio-16x9">
+              <iframe 
+                src="https://www.youtube-nocookie.com/embed?listType=user_uploads&list=EykardDLS" 
+                title="💻 App móvil" 
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="p-3 text-center flex-grow-1 d-flex flex-column justify-content-center">
+              <h6 class="fw-bold mb-1" style="color: var(--neon-yellow);">🎥 💻 App Móvil - Login & Navegación</h6>
+              <p class="small mb-0" style="color: var(--text-muted);">🔐 Autenticación de usuarios y validaciones de entrada</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN FORMULARIO DE CONTACTO -->
+  <section id="contacto" class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="cyber-card p-4 p-md-5">
+            <div class="text-center mb-4">
+              <h2 class="fw-bold" style="color: var(--neon-cyan);"><i class="fa-solid fa-paper-plane me-2"></i>Contáctame ✉️</h2>
+              <p style="color: var(--text-muted);">Completa el formulario y te responderé a la brevedad posible</p>
+            </div>
+
+            <!-- Alerta de éxito -->
+            <div id="contactAlert" class="alert alert-success d-none text-center fw-bold" role="alert">
+              ✅ Mensaje enviado correctamente.
+            </div>
+
+            <form id="contactForm" novalidate>
+              <!-- Nombre -->
+              <div class="mb-3">
+                <label for="userName" class="form-label fw-bold"><i class="fa-solid fa-user me-2 text-info"></i>Nombre Completo</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-transparent border-info text-info"><i class="fa-solid fa-id-badge"></i></span>
+                  <input type="text" class="form-control border-info" id="userName" name="from_name" placeholder="Ej. Juan Pérez" required />
+                </div>
+                <div class="invalid-feedback">Por favor ingresa tu nombre completo.</div>
+              </div>
+
+              <!-- Correo -->
+              <div class="mb-3">
+                <label for="userEmail" class="form-label fw-bold"><i class="fa-solid fa-envelope me-2 text-info"></i>Correo Electrónico</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-transparent border-info text-info"><i class="fa-solid fa-at"></i></span>
+                  <input type="email" class="form-control border-info" id="userEmail" name="from_email" placeholder="nombre@correo.com" required />
+                </div>
+                <div class="invalid-feedback">Ingresa un correo electrónico válido.</div>
+              </div>
+
+              <!-- Teléfono -->
+              <div class="mb-3">
+                <label for="userPhone" class="form-label fw-bold"><i class="fa-solid fa-phone me-2 text-info"></i>Teléfono</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-transparent border-info text-info"><i class="fa-solid fa-phone-volume"></i></span>
+                  <input type="tel" class="form-control border-info" id="userPhone" name="from_phone" placeholder="Ej. +1 809 000 0000" required />
+                </div>
+                <div class="invalid-feedback">Por favor ingresa un número de teléfono.</div>
+              </div>
+
+              <!-- Mensaje -->
+              <div class="mb-4">
+                <label for="userMessage" class="form-label fw-bold"><i class="fa-solid fa-comment-dots me-2 text-info"></i>Mensaje</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-transparent border-info text-info"><i class="fa-solid fa-pen-nib"></i></span>
+                  <textarea class="form-control border-info" id="userMessage" name="message" rows="4" placeholder="Escribe aquí tu propuesta o mensaje..." required></textarea>
+                </div>
+                <div class="invalid-feedback">Escribe el contenido de tu mensaje.</div>
+              </div>
+
+              <!-- Botón Enviar DodgerBlue -->
+              <div class="text-center">
+                <button type="submit" class="btn btn-dodgerblue px-5 py-2 rounded-pill fs-5">
+                  <i class="fa-solid fa-paper-plane me-2"></i> Enviar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-5 mt-5 border-top" style="border-color: var(--border-card) !important; background: var(--nav-bg);">
+    <div class="container text-center">
+      <h4 class="brand-font mb-4" style="color: var(--neon-cyan);">CONÉCTATE AL CIBERESPACIO 🌐</h4>
+      
+      <div class="d-flex flex-wrap justify-content-center gap-4 mb-4">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://www.youtube.com/@EykardDLS" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="https://github.com/Eykard/EYKARD-DE-LOS-SANTOS" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer" class="social-link" title="WhatsApp" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook" aria-label="Facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="social-link" title="Twitter" aria-label="Twitter">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      </div>
+
+      <p class="mb-0" style="color: var(--text-muted);">
+        © 2026 <strong>Eykard De Los Santos</strong>. Todos los derechos reservados. Desarrollado con Bootstrap, HTML5 y JavaScript.
+      </p>
+    </div>
+  </footer>
+
+  <!-- BOTÓN VOLVER ARRIBA -->
+  <button id="btnBackToTop" title="Volver al inicio" aria-label="Volver arriba">
+    <i class="fa-solid fa-arrow-up fa-lg"></i>
+  </button>
+
+  <!-- Bootstrap 5.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Archivo JavaScript Personalizado -->
+  <script src="script.js"></script>
+</body>
+</html>
